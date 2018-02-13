@@ -7,12 +7,12 @@ class User extends MY_Controller
 	
 	function __construct()
 	{
-		# code...
+		parent::__construct();
 	}
 
 	public function index()
 	{
-		echo "User Public Index";
+		$this->load->view('public/articles_list');
 	}
 }
 ?>
