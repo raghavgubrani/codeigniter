@@ -10,9 +10,15 @@ class User extends MY_Controller
 		parent::__construct();
 	}
 
+
 	public function index()
 	{
-		$this->load->view('public/articles_list');
+		$this->load->model('authenticate', 'auth');
+		$data = $this->authenticate->getData();
+		
+		print_r($data);
+		
+		echo "User Public Index";
 	}
 }
 ?>
