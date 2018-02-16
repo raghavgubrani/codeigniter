@@ -14,11 +14,10 @@ class User extends MY_Controller
 	public function index()
 	{
 		$this->load->model('authenticate', 'auth');
-		$data = $this->authenticate->getData();
+		$data['users'] = $this->authenticate->getUser();
+		// echo '<pre>'; print_r($data);
 		
-		print_r($data);
-		
-		echo "User Public Index";
+		$this->load->view('public/user_list',$data);
 	}
 }
 ?>
