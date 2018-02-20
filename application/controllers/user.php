@@ -16,7 +16,10 @@ class User extends MY_Controller
 		$this->load->model('authenticate', 'auth');
 		$data['users'] = $this->authenticate->getUser();
 		// echo '<pre>'; print_r($data);
-		
+
+		$this->load->library('email');
+		$this->email->send();
+
 		$this->load->view('public/user_list',$data);
 	}
 }
